@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <title>Ejercicio-9</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+        body{
+            align-items: center;
+            font-family: "Fredoka One", cursive;
+            margin: 10px;
+            padding: 10px;
+        }
+        .card{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+            left: 40%;
+        }
+        #nota{
+            text-align: center;
+        }
+      </style>
+</head>
+<body>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Calculo de promedio</h5>
+            <p> Introduce las notas del alumno.</p>
+            <form action="" name="calculo_promedio">
+        
+            <label for="">Primera nota</label><br> 
+            <input type="number" name="nota1" id="nota" class="rounded">  <br><br>
+            <label for="">Segunda nota</label><br> 
+            <input type="number" name="nota2" id="nota" class="rounded"><br><br>
+           
+            <input type="button" class="btn btn-outline-secondary btn-sm" value="Calcular promedio" onclick="notas()"><br><br><br>
+            <label for="">Resultado</label><br> 
+            <input type="number" name="resultado" id="nota" class="rounded"> <br><br>
+
+            <input type="reset" class="btn btn-outline-secondary btn-sm" value="Borrar informacion">
+            </form>
+        </div>
+    </div>
+    
+      <script>
+        function notas(){
+            let n;
+            let nota1, nota2, resultado;
+            nota1=parseFloat(document.calculo_promedio.nota1.value);
+            nota2=parseFloat(document.calculo_promedio.nota2.value);
+            resultado=nota1*0.30 + nota2*0.70;
+            document.calculo_promedio.resultado.value = resultado;
+        }
+      </script>
+
+     
+</body>
+</html>

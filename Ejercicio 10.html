@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <title>Ejercicio-10</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+        body{
+            align-items: center;
+            font-family: "Fredoka One", cursive;
+            margin: 10px;
+            padding: 10px;
+        }
+        .card{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+            left: 35%;
+        }
+        #calpeso{
+            text-align: center;
+        }
+      </style>
+</head>
+<body>
+      <div class="card" style="width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title">Calculo de peso ideal</h5>
+            <p> Introduce la siguente informacion para realizar el calculo de su peso ideal teorico</p>
+            <form action="" name="peso_ideal">
+                <label for="">Ingrese su edad</label><br> 
+                <input type="number" name="edad" id="calpeso"><br><br>
+                <label for="">Ingrese su altura (cm)</label><br> 
+                <input type="number" name="altura" id="calpeso"><br><br>
+                <label for="">Ingrese el genero</label><br> 
+                <input type="text" name="genero" id="calpeso"> <br><br>
+                <label for="">Ingrese su peso (lb)</label><br> 
+                <input type="number" name="peso_actual" id="calpeso"><br><br>
+                
+                <input type="button" value="Calcular peso" onclick="carlular_peso()"><br><br>
+                <label for="">Resultado (lb)</label><br> 
+                <input type="number" name="resultado" id="calpeso"> <br>
+            </form>
+        </div>
+    </div>
+   </body>
+   </html>
+
+   <script>
+    function carlular_peso(){
+        let edad,genero,altura,peso_actual,resultado
+        genero=document.peso_ideal.genero.value
+        edad=parseFloat(document.peso_ideal.edad.value)
+
+        if(genero=="MUJER"){
+            peso_actual=parseFloat(document.peso_ideal.peso_actual.value)
+            altura=parseFloat(document.peso_ideal.altura.value)
+            resultado=((altura-100)-((altura-150)/2))*2.2
+
+            document.peso_ideal.resultado.value = resultado
+
+            alert("Usted es " + genero + " su edad es de: " + edad + " años y su peso ideal es: " + resultado + " libras")
+        }else{
+            peso_actual=parseFloat(document.peso_ideal.peso_actual.value)
+            altura=parseFloat(document.peso_ideal.altura.value)
+            resultado=((altura-100)-((altura-150)/4))*2.2
+
+            document.peso_ideal.resultado.value = resultado
+
+            alert("Usted es " + genero + " su edad es de: " + edad + " años y su peso ideal es: " + resultado + " libras")
+        }
+    }
+    
+</script>
+
